@@ -1,6 +1,6 @@
 [
   {
-    "question": "4 × 5",
+    "question": "4 x 5",
     "answer": "20",
     "topic": "math",
     "tags": [
@@ -8,27 +8,27 @@
       "multiplication"
     ],
     "box": "1",
-    "date-created": "2020-08-31",
     "stats": {
-      "correct-answers-count": "10",
-      "incorrect-answers-count": "10",
-      "repetitions-count": "20"
+      "date_created": "2020-08-31",
+      "correct_answers_count": "10",
+      "incorrect_answers_count": "10",
+      "repetitions_count": "20"
     }
   },
   {
-    "question": "1 × 5",
+    "question": "1 x 5",
     "answer": "5",
     "topic": "math",
     "tags": [
       "math",
       "multiplication"
     ],
-    "box": "2",
-    "date-created": "2020-08-31",
+    "box": "1",
     "stats": {
-      "correct-answers-count": "10",
-      "incorrect-answers-count": "10",
-      "repetitions-count": "20"
+      "date_created": "2020-08-31",
+      "correct_answers_count": "10",
+      "incorrect_answers_count": "10",
+      "repetitions_count": "20"
     }
   }
 ]
