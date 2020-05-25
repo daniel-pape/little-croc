@@ -1,14 +1,15 @@
-from typing import List, Set, Dict, Tuple, Optional
+from typing import List, Optional
 from colorama import init
-from colorama import Fore, Back, Style
-from Card import Card
+from colorama import Fore, Style
 import json
+
+from little_croc.Card import Card
 
 
 def load_cards(box: Optional[int] = None) -> List[Card]:
     assert box is None or box in [0, 1, 2, 3, 4]
 
-    file = open("./box_1.json")
+    file = open("./src/little_croc/resources/box_1.json")
     cards: List[Card] = [Card.from_dict(card) for card in json.load(file)]
     file.close()
 
