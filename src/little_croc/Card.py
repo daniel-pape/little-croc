@@ -1,10 +1,10 @@
 import json
 import copy
 
-from little_croc.Stats import Stats
-
 from little_croc.JsonHelper import write_json
+from little_croc.Stats import Stats
 from . import here
+
 
 class Card:
     def __init__(self,
