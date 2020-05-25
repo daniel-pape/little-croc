@@ -1,26 +1,8 @@
-class Stats:
-    def __init__(self,
-                 date_created: str,
-                 correct_answers_count: int,
-                 incorrect_answers_count: int,
-                 repetitions_count: int):
-        self.date_created = date_created
-        self.correct_answers_count = correct_answers_count
-        self.incorrect_answers_count = incorrect_answers_count
-        self.repetitions_count = repetitions_count
+import json
+import copy
 
-    @classmethod
-    def from_dict(cls, stats_dict: dict):
-        return Stats(
-            stats_dict['date_created'],
-            int(stats_dict['correct_answers_count']),
-            int(stats_dict['incorrect_answers_count']),
-            int(stats_dict['repetitions_count']),
-        )
-
-
-def to_dict(self):
-    return {'x': ''}
+from JsonHelper import write_json
+from Stats import Stats
 
 
 class Card:
@@ -28,7 +10,7 @@ class Card:
                  question: str,
                  answer: str,
                  topic: str,
-                 tags: object,
+                 tags: list,
                  box: int,
                  stats: Stats):
         self.question = question
@@ -57,7 +39,46 @@ class Card:
             'question': self.question,
             'answer': self.answer,
             'topic': self.topic,
-            'tags': self.tags,
-            'box': self.box,
-            'stats': self.stats
+            'tags': str(self.tags),
+            'box': str(self.box),
+            'stats': self.stats.to_dict()
         }
+
+    def compare(self, other):
+        return self.question == other.question
+
+    def copy_to_box(self, to_box: int):
+        to_box_file = f'box_{to_box}.json'
+
+        with open(to_box_file) as to_box_stream:
+            print(f'Copy card to box {to_box}')
+            cards_in_to_box = json.load(to_box_stream)
+
+            new_card = copy.copy(self)
+            new_card.box = to_box
+            cards_in_to_box.append(new_card.to_dict())
+
+            write_json(cards_in_to_box, to_box_file)
+
+    def delete_from_box(self, from_box: int):
+        from_box_file = f'box_{from_box}.json'
+
+        with open(from_box_file) as from_box_stream:
+            print(f'Remove card from box {from_box}')
+            cards_in_from_box = json.load(from_box_stream)
+
+            filtered = [
+                card
+                for
+                card
+                in
+                cards_in_from_box
+                if not
+                Card.from_dict(card).compare(self)
+            ]
+
+            write_json(filtered, from_box_file)
+
+    def move_to_box(self, to_box: int):
+        self.copy_to_box(to_box)
+        self.delete_from_box(self.box)
