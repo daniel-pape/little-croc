@@ -1,0 +1,34 @@
+[
+  {
+    "question": "4 x 5",
+    "answer": "20",
+    "topic": "math",
+    "tags": [
+      "math",
+      "multiplication"
+    ],
+    "box": "1",
+    "stats": {
+      "date_created": "2020-08-31",
+      "correct_answers_count": "10",
+      "incorrect_answers_count": "10",
+      "repetitions_count": "20"
+    }
+  },
+  {
+    "question": "1 x 5",
+    "answer": "5",
+    "topic": "math",
+    "tags": [
+      "math",
+      "multiplication"
+    ],
+    "box": "1",
+    "stats": {
+      "date_created": "2020-08-31",
+      "correct_answers_count": "10",
+      "incorrect_answers_count": "10",
+      "repetitions_count": "20"
+    }
+  }
+]
