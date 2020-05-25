@@ -1,10 +1,10 @@
 [
     {
-        "question": "4 x 5",
-        "answer": "20",
+        "question": "1 x 5",
+        "answer": "5",
         "topic": "math",
         "tags": "['math', 'multiplication']",
-        "box": "2",
+        "box": "1",
         "stats": {
             "date_created": "2020-08-31",
             "correct_answers_count": "10",
@@ -13,11 +13,11 @@
         }
     },
     {
-        "question": "1 x 5",
-        "answer": "5",
+        "question": "4 x 5",
+        "answer": "20",
         "topic": "math",
         "tags": "['math', 'multiplication']",
-        "box": "2",
+        "box": "1",
         "stats": {
             "date_created": "2020-08-31",
             "correct_answers_count": "10",

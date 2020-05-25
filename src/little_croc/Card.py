@@ -2,8 +2,9 @@ import json
 import copy
 
 from little_croc.Stats import Stats
-from little_croc.JsonHelper import write_json
 
+from little_croc.JsonHelper import write_json
+from . import here
 
 class Card:
     def __init__(self,
@@ -48,7 +49,7 @@ class Card:
         return self.question == other.question
 
     def copy_to_box(self, to_box: int):
-        to_box_file = f'./src/little_croc/resources/box_{to_box}.json'
+        to_box_file = here / f'resources/box_{to_box}.json'
 
         with open(to_box_file) as to_box_stream:
             print(f'Copy card to box {to_box}')
@@ -61,7 +62,7 @@ class Card:
             write_json(cards_in_to_box, to_box_file)
 
     def delete_from_box(self, from_box: int):
-        from_box_file = f'./src/little_croc/resources/box_{from_box}.json'
+        from_box_file = here / f'resources/box_{from_box}.json'
 
         with open(from_box_file) as from_box_stream:
             print(f'Remove card from box {from_box}')
