@@ -1,0 +1,2 @@
+colorama==0.4.3
+PyScaffold==3.2.3
